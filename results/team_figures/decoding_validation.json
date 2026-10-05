@@ -1,0 +1,26 @@
+{
+  "validated_at_utc": "2026-10-05T08:50:56.282630+00:00",
+  "training_only_templates_independently_recomputed": true,
+  "all_examples_held_out_from_same_model": true,
+  "model_scores_independently_recomputed": true,
+  "all_480_contributions_and_offset_verified": true,
+  "saved_first_repeat_predictions_match_all_90_scores": true,
+  "source_originals_unchanged": {
+    "ECoG_Handpose.mat": true,
+    "classify.py": true
+  },
+  "existing_metrics_and_feature_archive_unchanged": true,
+  "notebook_valid_and_markdown_only": true,
+  "png_dimensions": {
+    "04_channel_time_patterns": [
+      2992,
+      1980
+    ],
+    "05_held_out_decisions": [
+      2992,
+      2244
+    ]
+  },
+  "svg_xml_valid": true,
+  "visual_review": "Both final figures inspected: labels and legends readable; no clipping or overlapping axes."
+}

@@ -1,0 +1,76 @@
+{
+  "created_at_utc": "2026-10-05T09:19:20.336447+00:00",
+  "whitening_enabled": true,
+  "baseline_exactly_reproduced": null,
+  "three_class": {
+    "mean_percent": 96.88888888888889,
+    "std_percent": 5.461424767753117,
+    "sample_count": 100
+  },
+  "fist_peace": {
+    "mean_percent": 97.16666666666667,
+    "std_percent": 6.689544080129825,
+    "sample_count": 100
+  },
+  "shuffled_control": {
+    "mean_percent": 33.666666666666664,
+    "std_percent": 5.600925849390471,
+    "sample_count": 20
+  },
+  "confusion_matrix_first_repeat": [
+    [
+      29,
+      1,
+      0
+    ],
+    [
+      0,
+      30,
+      0
+    ],
+    [
+      0,
+      1,
+      29
+    ]
+  ],
+  "feature_shape": [
+    90,
+    480
+  ],
+  "class_names": [
+    "Fist",
+    "Peace",
+    "Open"
+  ],
+  "filter_fit": "All 507025 continuous post-notch samples per channel",
+  "label_usage_for_filter_fit": false,
+  "cv": {
+    "folds": 10,
+    "repeats": 10,
+    "seed": 0
+  },
+  "source_script_unchanged": true,
+  "script_sha256": "bdffc2a1faf9eb6ef88b945272aa27ae336d1e6bcdb2129d6686321d3c8a3629",
+  "reference_sha256": "fd23be15f0fb6440b052fce556c2730088b760f3075cbb50f72782b31b83fb60",
+  "data_sha256": "b2b65f0f040ee9663c523801d92ba7e685d2ade94a2c1592c9975320966fab60",
+  "runtime": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "blas_threads": 1
+  },
+  "plot_files": [
+    "channel26_whitening_spectrum.png",
+    "confusion_matrix.png"
+  ],
+  "elapsed_seconds": 37.20245612299914,
+  "limitations": [
+    "One recording; no independent participant or session test.",
+    "The whole-recording filter fit includes evaluation-period signals without labels; this is the team's offline recipe.",
+    "The SD is across fold scores, not a confidence interval; repeated folds are not independent experiments.",
+    "The confusion matrix is from one complete 10-fold evaluation, not the repeated-CV mean."
+  ]
+}

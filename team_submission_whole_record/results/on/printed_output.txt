@@ -1,0 +1,12 @@
+Whitening: AR(10), Yule-Walker, whole recording (507025 samples/channel), one-pass lfilter.
+Feature matrix: (90, 480) (trials x features)
+
+3-class accuracy:      96.9% +/- 5.5%   (chance = 33.3%)
+Fist vs Peace only:    97.2% +/- 6.7%   (chance = 50%)
+Shuffled-label control: 33.7%   (should be near 33%)
+
+Confusion matrix (rows = true, columns = predicted):
+          Fist  Peace   Open
+   Fist     29      1      0
+  Peace      0     30      0
+   Open      0      1     29

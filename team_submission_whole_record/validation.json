@@ -1,0 +1,28 @@
+{
+  "validated_at_utc": "2026-10-05T09:27:16.144226+00:00",
+  "original_pipeline_ast_unchanged_except_whitening_additions": true,
+  "whitening_off_exactly_reproduces_original_features_scores_predictions": true,
+  "new_team_zip_classifier_matches_preserved_original": true,
+  "full_record_yule_walker_coefficients_independently_recomputed": true,
+  "coefficient_max_abs_error": 0.0,
+  "all_90_whitened_feature_rows_independently_recomputed": true,
+  "feature_max_abs_error": 0.0,
+  "all_100_three_class_and_binary_cv_fold_scores_reproduced": true,
+  "first_complete_10_fold_predictions_and_confusion_matrix_reproduced": true,
+  "all_reported_means_and_standard_deviations_recomputed": true,
+  "channel26_welch_spectra_independently_recomputed": true,
+  "channel26_spectral_flatness_50_300_excluding_notch_neighbors": {
+    "before": 0.20317801875395652,
+    "after": 0.2723330728218325
+  },
+  "different_from_initial_rest_calibration": true,
+  "feature_max_difference_from_prior_rest_only_method": 1.387284173529805,
+  "original_script_and_dataset_unchanged": true,
+  "previous_rest_experiment_metrics_sha256": "c4b3cbedaa5fbcb2f19bfeeee662a1a23b974411805f299ca73ae37c2d4af8a9",
+  "previous_rest_experiment_arrays_sha256": "7b291f4fc24f30fb0d16ec5492b82c1eed638057adccd8a7d1286e193ab3e8df",
+  "script_sha256": "bdffc2a1faf9eb6ef88b945272aa27ae336d1e6bcdb2129d6686321d3c8a3629",
+  "png_and_svg_valid": true,
+  "visual_review": "Spectrum and whitening-on confusion matrix inspected; no clipping or overlapping labels.",
+  "bonus_scripts_included": false,
+  "uploaded": false
+}

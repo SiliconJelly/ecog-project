@@ -1,0 +1,58 @@
+{
+  "created_at_utc": "2026-10-05T03:07:58.664310+00:00",
+  "data_sha256": "b2b65f0f040ee9663c523801d92ba7e685d2ade94a2c1592c9975320966fab60",
+  "prediction_arrays_sha256": "7b291f4fc24f30fb0d16ec5492b82c1eed638057adccd8a7d1286e193ab3e8df",
+  "comparison_metrics_sha256": "c4b3cbedaa5fbcb2f19bfeeee662a1a23b974411805f299ca73ae37c2d4af8a9",
+  "figure_script_sha256": "4ba7b29cf182eac28d440944b0284016c581f64688b063bedfa4e8cd90fc988a",
+  "ecog_channels_1_based": [
+    26,
+    37,
+    27,
+    16,
+    47
+  ],
+  "channel_selection": "Five largest pooled baseline high-gamma changes, 0.5\u20132.5 s over all trials; visualization only, fixed for both conditions.",
+  "glove_scale": "Stored sensor values; no additional scaling or calibration.",
+  "reference_definition": "Pointwise median over trials correct under both conditions in the first CV repetition.",
+  "reference_counts": {
+    "Open": 28,
+    "Peace": 27
+  },
+  "label_definition": "Class labels come from the instruction cue; glove signals record actual execution and may differ from the instruction.",
+  "examples": [
+    {
+      "trial_1_based": 1,
+      "cue_class": "Open",
+      "baseline_prediction": "Peace",
+      "whitening_prediction": "Peace"
+    },
+    {
+      "trial_1_based": 22,
+      "cue_class": "Open",
+      "baseline_prediction": "Peace",
+      "whitening_prediction": "Open"
+    }
+  ],
+  "example_selection": "All baseline Open errors from the first CV repetition; no cases excluded.",
+  "high_gamma": {
+    "band_hz": [
+      50,
+      300
+    ],
+    "power_smoothing_ms": 50,
+    "baseline_seconds": [
+      -1,
+      0
+    ],
+    "baseline_method": "Subtract each channel/trial's mean log power over pre-cue samples.",
+    "channel_aggregation": "Arithmetic mean of baseline-corrected dB over the fixed five channels.",
+    "display_sample_interval_ms": 5
+  },
+  "accuracy_gain_percentage_points": 3.555555555555557,
+  "limitations": [
+    "Exploratory illustration from one recording.",
+    "Reference traces and display channels are selected from the same recording, not independent test data.",
+    "Time-course visualization does not establish the cause of a classification error.",
+    "The classifier uses the unchanged 250 ms features; the plotted 50 ms power is visualization only."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "created_at_utc": "2026-10-05T07:27:53.533300+00:00",
+  "condition": "AR(10) whitening; first complete 10-fold CV repetition.",
+  "predicted_scissors_count": 31,
+  "correct_scissors_count": 29,
+  "incorrect_scissors_count": 2,
+  "correct_selection": "Actual trial nearest the median glove trajectory among correct scissors predictions, by mean squared distance over 0\u20132 s.",
+  "incorrect_selection": "Both incorrect scissors predictions included; ordered by cue class.",
+  "cases": [
+    {
+      "trial_1_based": 36,
+      "cue": "scissors",
+      "prediction": "scissors",
+      "matches_cue": true
+    },
+    {
+      "trial_1_based": 65,
+      "cue": "rock",
+      "prediction": "scissors",
+      "matches_cue": false
+    },
+    {
+      "trial_1_based": 1,
+      "cue": "paper",
+      "prediction": "scissors",
+      "matches_cue": false
+    }
+  ],
+  "reference_counts": {
+    "rock": 29,
+    "scissors": 29,
+    "paper": 29
+  },
+  "data_sha256": "b2b65f0f040ee9663c523801d92ba7e685d2ade94a2c1592c9975320966fab60",
+  "source_figure_data_sha256": "93b889729e791ff1e75a14d0646717c51f57fb94c5bb483a23e6630574862914",
+  "script_sha256": "753563fd22cd583d23a17eb7eed990dfeebb8bd2a56750de0b553f29a184f782",
+  "plot_helpers_sha256": "4ba7b29cf182eac28d440944b0284016c581f64688b063bedfa4e8cd90fc988a",
+  "label_definition": "Instruction cue labels; actual movement is observed separately using the glove.",
+  "interpretation": "Examples and references from one recording; not proof of why the classifier made each decision."
+}

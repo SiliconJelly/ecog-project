@@ -1,0 +1,67 @@
+--- classify.py
++++ classify_whitened.py
+@@ -7,13 +7,41 @@
+ Evaluation: 10-fold cross-validation repeated 10 times, plus a shuffled-label
+ control that should land at chance (33%).
+ """
++WHITEN = True
++
+ import numpy as np
+ import scipy.io as sio
+ import scipy.signal as ss
++from scipy.linalg import solve_toeplitz
+ import matplotlib.pyplot as plt
+ from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+ from sklearn.model_selection import RepeatedStratifiedKFold, cross_val_score, cross_val_predict, StratifiedKFold
+ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
++
++
++def whiten_whole_recording(channel_signals):
++    order = 10
++    sample_count = channel_signals.shape[1]
++    whitened_signals = np.empty_like(channel_signals)
++    coefficients = np.empty((channel_signals.shape[0], order + 1))
++    for channel_index, channel_signal in enumerate(channel_signals):
++        centered = channel_signal - channel_signal.mean()
++        covariance = np.asarray([
++            np.dot(centered[:sample_count - lag], centered[lag:]) / sample_count
++            for lag in range(order + 1)
++        ])
++        if not np.isfinite(covariance).all() or covariance[0] <= 0:
++            raise ValueError(f"Cannot fit AR(10) to channel {channel_index + 1}.")
++        covariance /= covariance[0]
++        predictor = solve_toeplitz(covariance[:-1], covariance[1:])
++        coefficients[channel_index] = np.r_[1.0, -predictor]
++        whitened_signals[channel_index] = ss.lfilter(
++            coefficients[channel_index], [1.0], channel_signal
++        )
++    if not np.isfinite(whitened_signals).all():
++        raise ValueError("Whitening produced non-finite values.")
++    return whitened_signals, coefficients
++
+ 
+ fs = 1200
+ y = sio.loadmat("ECoG_Handpose.mat")["y"]
+@@ -26,6 +54,22 @@
+ for f0 in [50, 100, 150, 200, 250, 300]:
+     b, a = ss.iirnotch(f0, Q=30, fs=fs)
+     ecog = ss.filtfilt(b, a, ecog, axis=1)
++
++if WHITEN:
++    spectrum_frequencies, spectrum_before = ss.welch(ecog[25], fs=fs, nperseg=2400)
++    ecog, whitening_coefficients = whiten_whole_recording(ecog)
++    _, spectrum_after = ss.welch(ecog[25], fs=fs, nperseg=2400)
++    spectrum_figure, spectrum_axis = plt.subplots(figsize=(9, 5))
++    positive_frequencies = spectrum_frequencies > 0
++    spectrum_axis.loglog(spectrum_frequencies[positive_frequencies], spectrum_before[positive_frequencies], label="Before whitening")
++    spectrum_axis.loglog(spectrum_frequencies[positive_frequencies], spectrum_after[positive_frequencies], label="After whitening")
++    spectrum_axis.axvspan(50, 300, color="#dddddd", alpha=0.35, label="Classifier band")
++    spectrum_axis.set(xlabel="Frequency (Hz)", ylabel="Power spectral density (signal units squared / Hz)",
++                      title="Channel 26: AR(10) whitening fitted to the whole recording", xlim=(1, 600))
++    spectrum_axis.legend(frameon=False)
++    spectrum_figure.tight_layout()
++    print(f"Whitening: AR(10), Yule-Walker, whole recording ({ecog.shape[1]} samples/channel), one-pass lfilter.")
++
+ hg = ss.sosfiltfilt(ss.butter(4, [50, 300], "bandpass", fs=fs, output="sos"), ecog, axis=1)
+ hg = hg ** 2
+ 

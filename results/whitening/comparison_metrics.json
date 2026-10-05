@@ -1,0 +1,162 @@
+{
+  "created_at_utc": "2026-10-05T00:22:04.389131+00:00",
+  "baseline": {
+    "three_class": {
+      "mean_percent": 93.33333333333334,
+      "std_percent": 7.3702773119008915,
+      "sample_count": 100
+    },
+    "fist_peace": {
+      "mean_percent": 93.5,
+      "std_percent": 9.397103572673632,
+      "sample_count": 100
+    },
+    "shuffled_control": {
+      "mean_percent": 33.833333333333336,
+      "std_percent": 5.549719156502371,
+      "sample_count": 20
+    },
+    "confusion_matrix_first_repeat": [
+      [
+        28,
+        2,
+        0
+      ],
+      [
+        2,
+        28,
+        0
+      ],
+      [
+        0,
+        2,
+        28
+      ]
+    ]
+  },
+  "whitening": {
+    "three_class": {
+      "mean_percent": 96.88888888888889,
+      "std_percent": 5.682983045575301,
+      "sample_count": 100
+    },
+    "fist_peace": {
+      "mean_percent": 96.66666666666666,
+      "std_percent": 7.071067811865474,
+      "sample_count": 100
+    },
+    "shuffled_control": {
+      "mean_percent": 33.33333333333333,
+      "std_percent": 5.752079602464347,
+      "sample_count": 20
+    },
+    "confusion_matrix_first_repeat": [
+      [
+        29,
+        1,
+        0
+      ],
+      [
+        0,
+        29,
+        1
+      ],
+      [
+        0,
+        1,
+        29
+      ]
+    ]
+  },
+  "paired_difference_pp": 3.555555555555557,
+  "per_repeat_accuracy_percent": {
+    "baseline": [
+      93.33333333333333,
+      93.33333333333333,
+      93.33333333333333,
+      93.33333333333333,
+      94.44444444444444,
+      94.44444444444444,
+      93.33333333333333,
+      93.33333333333333,
+      92.22222222222223,
+      92.22222222222221
+    ],
+    "whitening": [
+      96.66666666666666,
+      96.66666666666666,
+      96.66666666666666,
+      97.77777777777779,
+      97.77777777777779,
+      97.77777777777779,
+      95.55555555555554,
+      96.66666666666669,
+      96.66666666666669,
+      96.66666666666666
+    ]
+  },
+  "first_repeat_prediction_changes": {
+    "corrected": 4,
+    "new_errors": 1
+  },
+  "calibration": {
+    "source": "Cue-free recording before the first task; processed separately from all task data",
+    "raw_interval_seconds": [
+      0,
+      12.08
+    ],
+    "fit_interval_seconds": [
+      2.0,
+      10.08
+    ],
+    "samples_used": 9696,
+    "ar_order": 10,
+    "estimator": "Biased, demeaned Yule-Walker; per-channel FIR coefficients [1, -predictor]",
+    "application": "One-pass causal FIR after notch and before the unchanged high-gamma bandpass",
+    "fit_uses_task_trials": false
+  },
+  "evaluation": {
+    "trial_count": 90,
+    "class_counts": [
+      30,
+      30,
+      30
+    ],
+    "feature_shape": [
+      90,
+      480
+    ],
+    "n_splits": 10,
+    "n_repeats": 10,
+    "random_state": 0,
+    "identical_splits": true,
+    "shuffled_repetitions": 20,
+    "std_definition": "Population SD over 100 fold accuracies; not a confidence interval",
+    "baseline_feature_max_abs_difference": 0.0,
+    "baseline_scores_exactly_reproduced": true,
+    "baseline_other_controls_reused_from_verified_original_run": true
+  },
+  "spectral_flatness_median_50_300_excluding_notches": {
+    "baseline": 0.2028590443404235,
+    "whitening": 0.9619849023751927
+  },
+  "provenance": {
+    "data_sha256": "b2b65f0f040ee9663c523801d92ba7e685d2ade94a2c1592c9975320966fab60",
+    "reference_script_sha256": "fd23be15f0fb6440b052fce556c2730088b760f3075cbb50f72782b31b83fb60",
+    "analysis_script_sha256": "2a10785b332e2a933b5cc1196cfd9801b7ba1c04e618bdd98b0a9f9fcf1fe528",
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "blas_threads": 1
+  },
+  "limitations": [
+    "One recording and 90 task trials; no independent participant or session test.",
+    "Fixed zero-phase high-pass/notch/bandpass steps from the baseline are retained for offline comparability.",
+    "Repeated CV folds share data and are not independent experiments.",
+    "This is an AR-whitening ablation on Abri's LDA baseline, not a reproduction of the complete TVLDA paper.",
+    "Calibration choice, AR order, feature windows, and split seed were fixed before examining whitening accuracy."
+  ],
+  "elapsed_seconds": 61.38518922199728
+}

@@ -1,0 +1,70 @@
+{
+  "created_at_utc": "2026-10-05T09:27:16.156154+00:00",
+  "scope": "Core classifier submission only; no raw MAT data or derived feature archives.",
+  "files": {
+    "classify_whitened.py": {
+      "bytes": 5360,
+      "sha256": "bdffc2a1faf9eb6ef88b945272aa27ae336d1e6bcdb2129d6686321d3c8a3629"
+    },
+    "README.md": {
+      "bytes": 7920,
+      "sha256": "17829077550b958fe5de32ef8f9e09d97d1252e80060c9aa343d36b6b1850775"
+    },
+    "METHOD_NOTES.md": {
+      "bytes": 6985,
+      "sha256": "a2f689066acacfacd4b57ee44be6027f71c50c133a9410862347f2fd797351e4"
+    },
+    "requirements.txt": {
+      "bytes": 36,
+      "sha256": "648ecd8248e4441f602a9d791efe53d460c0473357d5e9c970bf46a54d86d19e"
+    },
+    "diff_vs_original.patch": {
+      "bytes": 3175,
+      "sha256": "911a71376675ae41c2fa5f4738ebc388f17a84724e1bb209661b6d54159f45c1"
+    },
+    "validation.json": {
+      "bytes": 1574,
+      "sha256": "f2178231d9ca8eca8938f2bc6ca115cee931e245c3ce7e77a81a28dff66b41c2"
+    },
+    "results/off/printed_output.txt": {
+      "bytes": 382,
+      "sha256": "66110f63bc0e717fe0babaab9c28218b671ff5f3f2953ca9df4fdc90ee07fb64"
+    },
+    "results/off/metrics.json": {
+      "bytes": 1856,
+      "sha256": "f63bf7d400b05e7a76a4be8550f45be806ab9ff29cff07ac84d53b1f5fade6a4"
+    },
+    "results/on/printed_output.txt": {
+      "bytes": 474,
+      "sha256": "a64d3ac50622776443932c8754009d5e18b09d680eca3051c34487f7530143eb"
+    },
+    "results/on/metrics.json": {
+      "bytes": 1956,
+      "sha256": "0aa005af78a07af0166166e5d0414c51048a012186384adeab67263ef150149c"
+    },
+    "results/off/confusion_matrix.png": {
+      "bytes": 31924,
+      "sha256": "88d226887cf334c82ac6b8df1228e93e9f6b9dac94ba01f38da34a4a9ec7d72d"
+    },
+    "results/off/confusion_matrix.svg": {
+      "bytes": 31649,
+      "sha256": "4a060b7b493ea838b8cc933b146a04c81e0e767bc261ffabdbbb3b7431e301d4"
+    },
+    "results/on/confusion_matrix.png": {
+      "bytes": 31353,
+      "sha256": "acd37a3fa15b671f594dfc14722efde66854c2e16df6fe2c43ec1454dbbe9890"
+    },
+    "results/on/confusion_matrix.svg": {
+      "bytes": 31501,
+      "sha256": "6c91f221590dacfc161aafcc588e84fbf98d5397278ece54a4c2e2561ee5d737"
+    },
+    "results/on/channel26_whitening_spectrum.png": {
+      "bytes": 113360,
+      "sha256": "095dcc097ab6b097acde0aaa7fda5be0fab466f27fa21c87f025a12b3a926c8c"
+    },
+    "results/on/channel26_whitening_spectrum.svg": {
+      "bytes": 98550,
+      "sha256": "c6765b36562702ec41fabca70c532e7668dc8c609b8624f78c605d5da6f5400d"
+    }
+  }
+}

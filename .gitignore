@@ -1,0 +1,36 @@
+# Python environments, bytecode and tooling caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+build/
+dist/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Local credentials and machine settings
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Generated handoff bundles and temporary design assets
+.superdesign/tmp/
+shareable/
+*.zip
+*.zip.part*
+
+# Keep recordings and verified dashboard results tracked for deployment.
+# Large .mat recordings are stored with Git LFS (see .gitattributes).

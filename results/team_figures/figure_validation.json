@@ -1,0 +1,23 @@
+{
+  "all_checks_passed": true,
+  "actual_glove_samples_match_exactly": true,
+  "high_gamma_recomputed_from_raw_ecog_max_difference": {
+    "baseline": 0,
+    "whitening": 0
+  },
+  "cv_results_match_saved_predictions": true,
+  "all_baseline_open_errors_included": true,
+  "source_files_unchanged": true,
+  "png_and_svg_valid": true,
+  "image_sizes": {
+    "01_glove_ecog_errors": [
+      5372,
+      1212
+    ],
+    "02_whitening_comparison": [
+      3725,
+      1267
+    ]
+  },
+  "visual_review_completed": true
+}
