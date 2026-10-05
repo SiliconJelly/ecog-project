@@ -23,6 +23,8 @@ Verified results are included; no training is needed. To regenerate them, run `p
 
 On [Streamlit Community Cloud](https://share.streamlit.io/), select `SiliconJelly/ecog-project`, branch `main`, entrypoint `dashboard/app.py`, and **Python 3.13** under Advanced settings. Dependencies come from `requirements.txt`; [Community Cloud supports Git LFS](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/file-organization).
 
+If installation stalls at `Preparing metadata` for NumPy, check the log's `Using Python` line. These pinned dependencies are tested on **Python 3.13**. Installation requires prebuilt wheels so an incompatible environment fails quickly instead of compiling scientific packages. To change an existing app's Python version, [delete its Cloud deployment and redeploy](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-python) with Python 3.13; the GitHub repository stays intact.
+
 ## Research & license
 
 These exploratory results come from one recording; the dashboard replays held-out predictions. See [methods](docs/CONTRIBUTION_METHODS.md) and the [contribution report](results/contribution_suite/CONTRIBUTION_REPORT.md) for evidence and limitations.

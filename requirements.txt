@@ -1,3 +1,6 @@
+# Use prebuilt wheels; fail promptly if the deployment Python is unsupported.
+--only-binary=:all:
+
 numpy==2.3.1
 scipy==1.16.2
 scikit-learn==1.7.2
